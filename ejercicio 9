@@ -1,0 +1,34 @@
+class Temporizador:
+    def __init__(self, tiempo_restante):
+        # Inicializa el tiempo restante con el valor proporcionado por el usuario
+        self.tiempo_restante = tiempo_restante
+        self.iniciado = False  # Indica si el temporizador ha sido iniciado
+
+    def iniciar(self):
+        # Imprime un mensaje indicando que el temporizador ha sido iniciado
+        if not self.iniciado:
+            self.iniciado = True
+            print(f"El temporizador ha sido iniciado con {self.tiempo_restante} segundos.")
+        else:
+            print("El temporizador ya está en marcha.")
+
+    def pausar(self):
+        # Imprime un mensaje indicando que el temporizador ha sido pausado
+        if self.iniciado:
+            print(f"El temporizador ha sido pausado. Tiempo restante: {self.tiempo_restante} segundos.")
+            self.iniciado = False
+        else:
+            print("El temporizador no está en marcha.")
+
+    def mostrar_tiempo_restante(self):
+        # Muestra el tiempo restante actual del temporizador
+        print(f"Tiempo restante: {self.tiempo_restante} segundos.")
+
+# Creación de un objeto de la clase Temporizador
+temporizador = Temporizador(60)  # Inicializa el temporizador con 60 segundos
+temporizador.mostrar_tiempo_restante()  # Muestra el tiempo restante actual
+temporizador.iniciar()  # Inicia el temporizador
+temporizador.pausar()  # Pausa el temporizador
+temporizador.mostrar_tiempo_restante()  # Muestra el tiempo restante actual
+temporizador.pausar()  # Intenta pausar el temporizador nuevamente
+temporizador.iniciar()  # Inicia el temporizador de nuevo
