@@ -1,0 +1,32 @@
+class Cafetera:
+    def __init__(self, capacidad):
+        # Inicializa la cafetera con la capacidad máxima y el nivel actual de café a 0
+        self.capacidad = capacidad
+        self.nivel_actual = 0
+
+    def llenar_cafetera(self):
+        # Llena la cafetera al máximo, estableciendo el nivel actual igual a la capacidad máxima
+        self.nivel_actual = self.capacidad
+        print("La cafetera ha sido llenada al máximo.")
+
+    def servir_taza(self):
+        # Disminuye el nivel de café en 1 si hay café disponible
+        if self.nivel_actual > 0:
+            self.nivel_actual -= 1
+            print("Se ha servido una taza de café.")
+        else:
+            print("No hay suficiente café para servir.")
+
+    def mostrar_nivel(self):
+        # Muestra cuántas tazas de café quedan disponibles en la cafetera
+        print(f"Quedan {self.nivel_actual} tazas de café disponibles en la cafetera.")
+
+# Creación de un objeto de la clase Cafetera
+cafetera = Cafetera(5)  # Inicializa la cafetera con una capacidad máxima de 5 tazas
+cafetera.mostrar_nivel()  # Muestra el nivel actual de café (0 tazas)
+cafetera.llenar_cafetera()  # Llena la cafetera al máximo
+cafetera.mostrar_nivel()  # Muestra el nivel actual de café (5 tazas)
+cafetera.servir_taza()  # Sirve una taza de café
+cafetera.mostrar_nivel()  # Muestra el nivel actual de café (4 tazas)
+cafetera.servir_taza()  # Sirve otra taza de café
+cafetera.mostrar_nivel()  # Muestra el nivel actual de café (3 tazas)
