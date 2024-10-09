@@ -1,0 +1,26 @@
+class Termostato:
+    def __init__(self, temperatura):
+        # Inicializa el atributo temperatura con el valor proporcionado
+        self.temperatura = temperatura
+
+    def aumentar_temperatura(self, grados):
+        # Incrementa el valor de temperatura en los grados especificados
+        self.temperatura += grados
+        print(f"La temperatura ha aumentado en {grados} grados.")
+
+    def disminuir_temperatura(self, grados):
+        # Decrementa el valor de temperatura en los grados especificados
+        self.temperatura -= grados
+        print(f"La temperatura ha disminuido en {grados} grados.")
+
+    def mostrar_temperatura(self):
+        # Muestra la temperatura actual del termostato
+        print(f"La temperatura actual del termostato es de {self.temperatura} grados.")
+
+# Creación de un objeto de la clase Termostato
+termostato = Termostato(22)  # Inicializa la temperatura a 22 grados
+termostato.mostrar_temperatura()  # Muestra la temperatura actual
+termostato.aumentar_temperatura(5)  # Aumenta la temperatura en 5 grados
+termostato.mostrar_temperatura()  # Muestra la temperatura actual
+termostato.disminuir_temperatura(3)  # Disminuye la temperatura en 3 grados
+termostato.mostrar_temperatura()  # Muestra la temperatura actual
