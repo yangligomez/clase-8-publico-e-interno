@@ -1,0 +1,36 @@
+class Album:
+    def __init__(self):
+        # Inicializa una lista vacía para almacenar las fotos del álbum
+        self.fotos = []
+
+    def agregar_foto(self, foto):
+        # Añade una foto al álbum
+        self.fotos.append(foto)
+        print(f"La foto '{foto}' ha sido agregada al álbum.")
+
+    def eliminar_foto(self, foto):
+        # Elimina una foto de la lista si está presente
+        if foto in self.fotos:
+            self.fotos.remove(foto)
+            print(f"La foto '{foto}' ha sido eliminada del álbum.")
+        else:
+            print(f"La foto '{foto}' no se encuentra en el álbum.")
+
+    def mostrar_fotos(self):
+        # Muestra todas las fotos en el álbum
+        if self.fotos:
+            print("Fotos en el álbum:")
+            for foto in self.fotos:
+                print(f"- {foto}")
+        else:
+            print("El álbum está vacío.")
+
+# Creación de un objeto de la clase Album
+mi_album = Album()
+mi_album.mostrar_fotos()  # Muestra el estado inicial del álbum (vacío)
+mi_album.agregar_foto("Vacaciones en la playa")  # Agrega una foto al álbum
+mi_album.agregar_foto("Cumpleaños")  # Agrega otra foto al álbum
+mi_album.mostrar_fotos()  # Muestra las fotos en el álbum
+mi_album.eliminar_foto("Cumpleaños")  # Elimina una foto del álbum
+mi_album.mostrar_fotos()  # Muestra las fotos en el álbum después de la eliminación
+mi_album.eliminar_foto("Navidad")  # Intenta eliminar una foto que no está en el álbum
