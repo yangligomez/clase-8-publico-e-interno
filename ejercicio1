@@ -1,0 +1,26 @@
+class Persona:
+    def __init__(self, nombre, edad):
+        # Método constructor que inicializa los atributos nombre, edad y estado
+        self.nombre = nombre
+        self.edad = edad
+        self.estado = "despierto"  # Estado inicial de la persona
+
+    def dormir(self):
+        # Cambia el estado de la persona a "durmiendo"
+        self.estado = "durmiendo"
+
+    def despertar(self):
+        # Cambia el estado de la persona a "despierto"
+        self.estado = "despierto"
+
+    def mostrar_estado(self):
+        # Imprime el estado actual de la persona
+        print(f"{self.nombre}, de {self.edad} años, está {self.estado}.")
+
+# Creación de un objeto de la clase Persona
+persona1 = Persona("Ana", 30)
+persona1.mostrar_estado()  # Muestra el estado inicial (despierto)
+persona1.dormir()  # Cambia el estado a durmiendo
+persona1.mostrar_estado()  # Muestra el estado actual (durmiendo)
+persona1.despertar()  # Cambia el estado a despierto
+persona1.mostrar_estado()  # Muestra el estado actual (despierto)
