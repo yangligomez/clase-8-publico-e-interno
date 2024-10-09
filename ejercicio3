@@ -1,0 +1,35 @@
+class Libro:
+    def __init__(self, titulo, autor):
+        # Inicializa los atributos titulo, autor, y disponible (por defecto disponible es True)
+        self.titulo = titulo
+        self.autor = autor
+        self.disponible = True  # Estado inicial del libro es disponible
+
+    def prestar(self):
+        # Marca el libro como prestado (disponible = False) si está disponible
+        if self.disponible:
+            self.disponible = False
+            print(f"El libro '{self.titulo}' de {self.autor} ha sido prestado.")
+        else:
+            print(f"El libro '{self.titulo}' de {self.autor} ya está prestado.")
+
+    def devolver(self):
+        # Marca el libro como disponible (disponible = True)
+        if not self.disponible:
+            self.disponible = True
+            print(f"El libro '{self.titulo}' de {self.autor} ha sido devuelto y ahora está disponible.")
+        else:
+            print(f"El libro '{self.titulo}' de {self.autor} ya está disponible.")
+
+    def mostrar_estado(self):
+        # Muestra si el libro está disponible o prestado
+        estado = "disponible" if self.disponible else "prestado"
+        print(f"El libro '{self.titulo}' de {self.autor} está actualmente {estado}.")
+
+# Creación de un objeto de la clase Libro
+libro1 = Libro("Cien años de soledad", "Gabriel García Márquez")
+libro1.mostrar_estado()  # Muestra el estado inicial (disponible)
+libro1.prestar()  # Marca el libro como prestado
+libro1.mostrar_estado()  # Muestra el estado actual (prestado)
+libro1.devolver()  # Marca el libro como disponible
+libro1.mostrar_estado()  # Muestra el estado actual (disponible)
